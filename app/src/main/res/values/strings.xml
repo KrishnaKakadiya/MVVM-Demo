@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM-Demo</string>
+    <string name="error_loading_data">There seems to have been some error.</string>
+</resources>

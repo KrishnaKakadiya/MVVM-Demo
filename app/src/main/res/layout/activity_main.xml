@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mainViewModel"
+            type="com.kakadiya.mvvm_demo.viewmodel.MainViewModel"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:visibility="@{mainViewModel.progressbar}"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/weather_background"
+            android:padding="20dp"
+            app:visibility="@{mainViewModel.mainLayout}">
+
+            <TextView
+                android:id="@+id/date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{mainViewModel.dateTime}"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/day_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{mainViewModel.maxTemperature}"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="\u00B0"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_action_action_trending_up"
+                    android:layout_marginRight="10dp" />
+                <TextView
+                    android:id="@+id/night_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{mainViewModel.minTemperature}"
+                    android:textSize="18sp"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="\u00B0"
+                    android:textSize="12sp"
+                    android:textColor="@color/white" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_action_action_trending_down" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{mainViewModel.temperature}"
+                    android:textSize="80sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="℃"
+                    android:textSize="40sp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp">
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@{mainViewModel.image}"
+                        android:layout_weight="0.2"/>
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{mainViewModel.description}"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>
