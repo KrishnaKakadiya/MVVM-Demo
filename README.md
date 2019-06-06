@@ -5,3 +5,6 @@ This application is implemented using MVVM architecture and using data binding w
 I used the https://openweathermap.org/current api to display the current weather for my current location based on my devices GPS.
 I have also handled cases where no location is found (GPS disabled or off), or the api call fails.
 I displayed the temperature in Celsius.
+
+
+![Current Weather](https://github.com/KrishnaKakadiya/MVVM-Demo/blob/master/device-2019-06-06-143205.png)
